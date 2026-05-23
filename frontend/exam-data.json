@@ -1,0 +1,32 @@
+{
+  "id": "read_01",
+  "skill": "reading",
+  "level": "B1",
+  "examType": "reading",
+  "title": "VSTEP Reading Practice Test 1",
+  "passage": "Đây là đoạn văn bản rất dài...",
+  "questions": [
+    {
+      "questionNumber": 1,
+      "content": "What is the main idea of the passage?",
+      "options": {
+        "A": "Ý chính A",
+        "B": "Ý chính B",
+        "C": "Ý chính C",
+        "D": "Ý chính D"
+      },
+      "correctAnswer": "A"
+    },
+    {
+      "questionNumber": 2,
+      "content": "According to paragraph 2, the word 'it' refers to...",
+      "options": {
+        "A": "Lựa chọn A",
+        "B": "Lựa chọn B",
+        "C": "Lựa chọn C",
+        "D": "Lựa chọn D"
+      },
+      "correctAnswer": "C"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "list_01",
+  "skill": "listening",
+  "level": "B1",
+  "examType": "listening",
+  "title": "VSTEP Listening Practice Test 1",
+  "passage": "Hi everyone. Welcome to the VSTEP Listening test.\n\nPart 1: In this part, you will hear a conversation between two friends. \nJohn: Hey Sarah, did you finish the assignment?\nSarah: Not yet, I'm planning to do it tonight.\n\n(Đây là đoạn Transcript sẽ bị giấu đi lúc làm bài và chỉ hiện ra lúc nộp xong).",
+  "questions": [
+    {
+      "questionNumber": 1,
+      "content": "What is Sarah planning to do tonight?",
+      "options": {
+        "A": "Go to a party",
+        "B": "Finish the assignment",
+        "C": "Call her mom",
+        "D": "Watch a movie"
+      },
+      "correctAnswer": "B"
+    },
+    {
+      "questionNumber": 2,
+      "content": "Where does this conversation likely take place?",
+      "options": {
+        "A": "At school",
+        "B": "At a hospital",
+        "C": "In a supermarket",
+        "D": "At a bus stop"
+      },
+      "correctAnswer": "A"
+    }
+  ]
+}
