@@ -70,7 +70,7 @@ app.get(
 
     // Bắn Token bảo mật cùng Tên và Avatar thật về trang Dashboard của Frontend thông qua URL thanh địa chỉ
     res.redirect(
-      `http://127.0.0.1:5500/frontend/dashboard.html?token=${token}&name=${encodeURIComponent(req.user.name)}&avatar=${encodeURIComponent(req.user.avatar)}`,
+      `https://vstep-project.vercel.app//dashboard.html?token=${token}&name=${encodeURIComponent(req.user.name)}&avatar=${encodeURIComponent(req.user.avatar)}`,
     );
   },
 );
