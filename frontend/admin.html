@@ -111,11 +111,14 @@
           btn.disabled = true;
 
           // Gửi lên Backend
-          const response = await fetch("http://localhost:5000/api/exams", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(parsedData),
-          });
+          const response = await fetch(
+            "https://vstep-project.onrender.com/api/exams",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(parsedData),
+            },
+          );
 
           const result = await response.json();
 

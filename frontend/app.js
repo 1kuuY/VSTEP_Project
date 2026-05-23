@@ -14,7 +14,7 @@ const EXAM_ID_FROM_URL =
   urlParams.get("id") || (IS_LISTENING_PAGE ? "list_01" : "read_01");
 const REVIEW_ID_FROM_URL = urlParams.get("reviewId"); // Lấy chìa khóa xem lại
 const CURRENT_EXAM_ID = `vstep_progress_${EXAM_ID_FROM_URL}`;
-const DATA_FILE_URL = `http://localhost:5000/api/exams/${EXAM_ID_FROM_URL}`;
+const DATA_FILE_URL = `https://vstep-project.onrender.com/api/exams/${EXAM_ID_FROM_URL}`;
 
 let currentExamType = IS_LISTENING_PAGE ? "listening" : "reading";
 let transcriptData = "";
@@ -343,7 +343,7 @@ async function gradeExam() {
       studentAnswers: currentStudentAnswers,
     };
 
-    fetch("http://localhost:5000/api/results", {
+    fetch("https://vstep-project.onrender.com/api/results", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -387,7 +387,7 @@ async function loadReviewMode(examData) {
     }
 
     const response = await fetch(
-      `http://localhost:5000/api/results/${REVIEW_ID_FROM_URL}`,
+      `https://vstep-project.onrender.com/api/results/${REVIEW_ID_FROM_URL}`,
     );
     const historyData = await response.json();
     const studentAnswers = historyData.studentAnswers || {};
