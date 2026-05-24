@@ -166,6 +166,16 @@ async function loadExamData() {
                     <input class="form-check-input student-radio" type="radio" name="q${q.questionNumber}" id="q${q.questionNumber}D" value="D">
                     <label class="form-check-label" for="q${q.questionNumber}D">D. ${q.options.D}</label>
                 </div>
+                <div class="form-check">
+                    <input class="form-check-input student-radio" type="radio" name="q${q.questionNumber}" id="q${q.questionNumber}D" value="D">
+                    <label class="form-check-label" for="q${q.questionNumber}D">D. ${q.options.D}</label>
+                </div>
+
+                <div class="explanation-box mt-3 p-3 bg-success bg-opacity-10 border border-success rounded d-none" id="explain-${q.questionNumber}">
+                    <h6 class="fw-bold text-success mb-2">💡 Giải thích chi tiết:</h6>
+                    <div class="mb-0 text-dark small" style="white-space: pre-line;">${q.explanation || "Chưa có dữ liệu giải thích cho câu hỏi này."}</div>
+                </div>
+                
             </div>
         </div>`;
     });
@@ -399,6 +409,10 @@ async function loadReviewMode(examData) {
     // 2. Chấm điểm lại
     examData.questions.forEach((q) => {
       const qNum = q.questionNumber;
+      const explainBox = document.getElementById(`explain-${qNum}`);
+      if (explainBox && q.explanation) {
+        explainBox.classList.remove("d-none");
+      }
       const correctAns = q.correctAnswer;
       const studentAns = studentAnswers[qNum];
 
