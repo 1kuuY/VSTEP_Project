@@ -22,6 +22,7 @@ const ExamSchema = new mongoose.Schema({
         D: String,
       },
       correctAnswer: String,
+      explanation: String,
     },
   ],
 });
