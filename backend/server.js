@@ -82,10 +82,22 @@ app.post("/api/exams", async (req, res) => {
 
     // Kiểm tra xem Admin gửi lên 1 mảng (nhiều đề) hay 1 object (1 đề)
     if (Array.isArray(data)) {
-      await Exam.insertMany(data); // Lưu một lúc nhiều đề
+      // Dùng vòng lặp Promise.all để Upsert (Ghi đè/Tạo mới) từng đề trong mảng
+      await Promise.all(
+        data.map((exam) =>
+          Exam.findOneAndUpdate({ id: exam.id }, exam, {
+            new: true,
+            upsert: true,
+          }),
+        ),
+      );
     } else {
-      const newExam = new Exam(data);
-      await newExam.save(); // Lưu 1 đề lẻ
+      // Upsert cho 1 đề lẻ
+      await Exam.findOneAndUpdate(
+        { id: data.id }, // Tìm đề thi dựa trên mã id (VD: read_real_04)
+        data, // Dữ liệu mới sẽ đè lên
+        { new: true, upsert: true }, // Chìa khóa vàng: Có thì đè, chưa có thì tạo!
+      );
     }
 
     res.status(201).json({
