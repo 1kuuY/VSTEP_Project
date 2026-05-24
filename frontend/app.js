@@ -438,8 +438,8 @@ async function loadReviewMode(examData) {
     });
 
     // Kiểm tra nếu có dữ liệu bài nghe (passage) trong file JSON của đề thi
-    console.log("Kiểm tra Transcript:", data.passage); // Dòng này để gián điệp xem có data chưa
-    if (data.passage) {
+    console.log("Kiểm tra Transcript:", examData.passage); // Dòng này để gián điệp xem có data chưa
+    if (examData.passage) {
       const transcriptContainer = document.getElementById(
         "transcript-container",
       );
@@ -448,7 +448,7 @@ async function loadReviewMode(examData) {
 
       if (transcriptContainer && transcriptContent) {
         // Nạp dữ liệu text vào
-        transcriptContent.innerHTML = data.passage;
+        transcriptContent.innerHTML = examData.passage;
         // Cho hiện cái khung này lên (vì lúc làm bài bình thường nó bị ẩn)
         transcriptContainer.style.display = "block";
       }
