@@ -438,10 +438,12 @@ async function loadReviewMode(examData) {
     });
 
     // Kiểm tra nếu có dữ liệu bài nghe (passage) trong file JSON của đề thi
+    console.log("Kiểm tra Transcript:", data.passage); // Dòng này để gián điệp xem có data chưa
     if (data.passage) {
       const transcriptContainer = document.getElementById(
         "transcript-container",
       );
+      console.log("Kiểm tra Container HTML:", transcriptContainer); // Xem HTML có tồn tại không
       const transcriptContent = document.getElementById("transcript-content");
 
       if (transcriptContainer && transcriptContent) {
