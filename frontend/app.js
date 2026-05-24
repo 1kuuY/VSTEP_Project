@@ -107,6 +107,11 @@ async function loadExamData() {
     if (!response.ok) throw new Error("Không thể lấy dữ liệu từ Server");
     const data = await response.json();
 
+    // Nếu data là một mảng các đề thi, ta sắp xếp theo ID
+    if (Array.isArray(data)) {
+      data.sort((a, b) => a.id.localeCompare(b.id));
+    }
+
     currentExamType = data.skill || "reading";
     transcriptData = data.passage || "";
 
