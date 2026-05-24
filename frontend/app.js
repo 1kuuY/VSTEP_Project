@@ -168,7 +168,7 @@ async function loadExamData() {
                 </div>
                 <div class="explanation-box mt-3 p-3 bg-success bg-opacity-10 border border-success rounded d-none" id="explain-${q.questionNumber}">
                     <h6 class="fw-bold text-success mb-2">💡 Giải thích chi tiết:</h6>
-                    <div class="mb-0 text-dark small" style="white-space: pre-line;">${q.explanation || "Chưa có dữ liệu giải thích cho câu hỏi này."}</div>
+                    <div class="mb-0 text-dark small" style="line-height: 1.6;">${q.explanation ? q.explanation.replace(/\\n/g, "<br>") : "Chưa có dữ liệu giải thích cho câu hỏi này."}</div>
                 </div>
                 
             </div>
