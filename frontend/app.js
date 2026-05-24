@@ -435,6 +435,20 @@ async function loadReviewMode(examData) {
       } else {
         questionCard.classList.add("border-warning", "border-2");
       }
+      // Kiểm tra nếu có dữ liệu bài nghe (passage) trong file JSON của đề thi
+      if (data.passage) {
+        const transcriptContainer = document.getElementById(
+          "transcript-container",
+        );
+        const transcriptContent = document.getElementById("transcript-content");
+
+        if (transcriptContainer && transcriptContent) {
+          // Nạp dữ liệu text vào
+          transcriptContent.innerHTML = data.passage;
+          // Cho hiện cái khung này lên (vì lúc làm bài bình thường nó bị ẩn)
+          transcriptContainer.style.display = "block";
+        }
+      }
     });
 
     // ... (Phần hiện Transcript giữ nguyên như cũ) ...
